@@ -30,7 +30,7 @@ cp ~/AutoBSPWM/scripts/ethernet_status.sh ~/.config/polybar/forest/scripts/
 cp ~/AutoBSPWM/scripts/vpn_status.sh ~/.config/polybar/forest/scripts/
 cp ~/AutoBSPWM/scripts/htb_target.sh  ~/.config/polybar/forest/scripts/
 touch ~/.target
-
+cp -r ~/AutoBSPWM/fonts ~/.local/share/fonts
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -44,3 +44,10 @@ cp ~/AutoBSPWM/aliases ~/.config/aliases
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Iosevka.zip
 unzip Iosevka.zip -d ~/.local/share/fonts/IosevkaNF
+
+chmod +x ~/AutoBSPWM/scripts/*
+sudo ln -s ~/AutoBSPWM/scripts/ligolo_script.sh /usr/local/bin/ligolo_script
+sudo ln -s ~/AutoBSPWM/scripts/multihandler.sh /usr/local/bin/multihandler
+sudo ln -s ~/AutoBSPWM/scripts/penelope.py /usr/local/bin/pen
+sudo ln -s ~/AutoBSPWM/scripts/target.sh /usr/local/bin/target
+sudo ln -s ~/AutoBSPWM/scripts/transfile.sh /usr/local/bin/transfile
