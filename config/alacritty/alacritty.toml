@@ -1,0 +1,23 @@
+import = [
+    "~/.config/alacritty/themes/themes/catppuccin_frappe.toml"
+]
+
+[font]
+size = 9
+
+[font.offset]
+x = 0
+y = 1
+
+[window.padding]
+x = 10
+y = 10
+
+[cursor]
+style = "Beam"
+
+
+[window]
+startup_mode = "Windowed"
+dynamic_padding = true
+opacity = 0.8
