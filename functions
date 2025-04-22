@@ -1,0 +1,120 @@
+# Extract nmap information
+function extractPorts(){
+	ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
+	ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
+	echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
+	echo -e "\t[*] IP Address: $ip_address"  >> extractPorts.tmp
+	echo -e "\t[*] Open ports: $ports\n"  >> extractPorts.tmp
+	echo $ports | tr -d '\n' | xclip -sel clip
+	echo -e "[*] Ports copied to clipboard\n"  >> extractPorts.tmp
+	cat extractPorts.tmp; rm extractPorts.tmp
+}
+
+# Settarget
+function settarget(){
+        if [ $# -eq 1 ]; then
+        	echo $1 > ~/.target
+        elif [ $# -gt 2 ]; then
+        	echo "settarget [IP] [NAME] | settarget [IP]"
+        else
+        	echo $1 $2 > ~/.target
+        fi
+}
+
+# TTY upgrades
+py_tty_upgrade () {
+  echo "python -c 'import pty;pty.spawn(\"/bin/bash\")'"| xclip -sel clip
+}
+py3_tty_upgrade () {
+  echo "python3 -c 'import pty;pty.spawn(\"/bin/bash\")'"| xclip -sel clip
+}
+alias script_tty_upgrade="echo '/usr/bin/script -qc /bin/bash /dev/null'| xclip -sel clip"
+alias tty_fix="stty raw -echo; fg; reset"
+alias tty_conf="stty -a | sed 's/;//g' | head -n 1 | sed 's/.*baud /stty /g;s/line.*//g' | xclip -sel clip"
+
+# Various
+urlencode() {
+    python3 -c "from pwn import *; print(urlencode('$1'));"
+}
+urldecode() {
+    python3 -c "from pwn import *; print(urldecode('$1'));"
+}
+fx() {
+	feroxbuster -u $1 -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-2.3-small.txt
+}
+ffuf-vhost() {
+    arg_count=3
+    if [[ $2 && $2 != -* ]]; then
+        wordlist=$2
+    else
+        wordlist='/usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt'
+        arg_count=2
+    fi
+    ffuf -c -H "Host: FUZZ.$1" -u http://$1 -w $wordlist ${@: $arg_count};
+}
+ffuf-dir() {
+    arg_count=3
+    if [[ $2 && $2 != -* ]]; then
+        wordlist=$2
+    else
+        wordlist='/usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt'
+        arg_count=2
+    fi
+    ffuf -c -u $1FUZZ -w $wordlist ${@: $arg_count};
+}
+ffuf-req() {
+    arg_count=2
+    if [[ $1 && $1 != -* ]]; then
+        wordlist=$1
+    else
+        wordlist='/usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt'
+        arg_count=1
+    fi
+    ffuf -c -ic -request new.req -request-proto http -w $wordlist ${@: $arg_count};
+}
+qssh() {
+    sshpass -p $2 ssh -o StrictHostKeyChecking=no $1@$3 ${@: 4};
+}
+qsshr() {
+    sshpass -p $2 ssh -N -f -D 127.0.0.1:9050 -o StrictHostKeyChecking=accept-new $1@$3 ${@: 4};
+}
+rdp() {
+    xfreerdp3 /u:$1 /p:$2 /v:$3 /clipboard /dynamic-resolution /drive:share,$(pwd) /cert:ignore;
+}
+rdp-hash() {
+    xfreerdp3 /u:$1 /pth:$2 /v:$3 /clipboard /dynamic-resolution /drive:share,$(pwd) /cert:ignore;
+}
+rdp-low() {
+    xfreerdp3 /u:$1 /p:$2 /v:$3 /clipboard /dynamic-resolution /drive:share,$(pwd) /cert:ignore /bpp:8 /compression -themes -wallpaper /audio-mode:0 /auto-reconnect;
+}
+rdp-low-hash() {
+    xfreerdp3 /u:$1 /pth:$2 /v:$3 /clipboard /dynamic-resolution /drive:share,$(pwd) /cert:ignore /bpp:8 /compression -themes -wallpaper /audio-mode:0 /auto-reconnect;
+}
+extract() {
+  if [ -z "$1" ]; then
+    echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
+  else
+    if [ -f $1 ]; then
+      case $1 in
+        *.tar.bz2)   tar xvjf $1    ;;
+        *.tar.gz)    tar xvzf $1    ;;
+        *.tar.xz)    tar xvJf $1    ;;
+        *.lzma)      unlzma $1      ;;
+        *.bz2)       bunzip2 $1     ;;
+        *.rar)       unrar x -ad $1 ;;
+        *.gz)        gunzip $1      ;;
+        *.tar)       tar xvf $1     ;;
+        *.tbz2)      tar xvjf $1    ;;
+        *.tgz)       tar xvzf $1    ;;
+        *.zip)       unzip $1       ;;
+        *.Z)         uncompress $1  ;;
+        *.7z)        7z x $1        ;;
+        *.xz)        unxz $1        ;;
+        *.exe)       cabextract $1  ;;
+        *)           echo "extract: '$1' - unknown archive method" ;;
+      esac
+    else
+      echo "$1 - file does not exist"
+    fi
+  fi
+}

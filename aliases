@@ -1,0 +1,70 @@
+# Target
+alias gt='cat ~/.ctf_vars | cut -d "=" -f 2 | sed -n "2p" | xclip -selection clipboard'
+
+# Ls
+alias ll='/usr/bin/lsd -lh --group-dirs=first'
+alias la='/usr/bin/lsd -a --group-dirs=first'
+alias l='/usr/bin/lsd --group-dirs=first'
+alias ls='/usr/bin/lsd -lha --group-dirs=first'
+alias lla='/usr/bin/lsd --group-dirs=first'
+alias bat=batcat
+
+# Folders
+alias tools-server='cd $HOME/Tools;l;python3 -m http.server 8000'
+alias tools='cd $HOME/Tools'
+alias home='cd $HOME'
+alias downloads='cd $HOME/Downloads'
+alias desktop='cd $HOME/Desktop'
+alias www='python3 -m http.server 8888'
+alias nmap-tcp='nmap -p- --min-rate 10000 -Pn -n -oG scans/allTCPPorts $target'
+alias nmap-udp='sudo nmap -sU --top-ports 10000 --min-rate 10000 -Pn -n -oG scans/top100UDPPorts $target'
+alias nmap-tcp-ports='nmap -sCV -oG scans/targetedTCPPorts $target -p '
+alias nmap-udp-ports='nmap -sU -sCV -oG scans/targetedUPDPorts $target -p '
+
+# Wordlist
+wordlists=/usr/share/wordlists/
+rockyou=/usr/share/wordlists/rockyou.txt
+seclists=/usr/share/wordlists/seclists
+
+# UFW 
+
+alias ufwon='sudo ufw enable' # Habilita el FW
+alias ufwoff='sudo ufw disable' # Deshabilita el FW
+alias ufwst='sudo ufw status numbered' # Ves reglas puestas
+alias ufwallow='sudo ufw allow from' # Aceptas una ip desde <maquina>
+alias ufwdeny='sudo ufw deny from' # Negas conexion de una ip especi>
+alias ufwdel='sudo ufw delete' #  Eliminas una regla puesta (con el >
+alias ufwport='sudo ufw allow' # Aceptas conexion a un puerto
+alias ufwnoport='sudo ufw deny' # Negas conex a un puerto
+alias ufwverbose='sudo ufw status verbose'
+
+# Various
+alias ifconfig='sudo ifconfig'
+alias s='sudo'
+alias h='history'
+alias installz='sudo apt-get install $1 -y'
+alias autoremove='sudo apt-get autoremove -y'
+alias autoclean='sudo apt-get autoclean -y'
+alias root='sudo -i'
+alias diff='colordiff'
+alias mount='sudo mount | column -t'
+alias webup='sudo python3 -m http.server 80'
+alias httpup='sudo ~/apps/up-http-tool/up'
+alias ftpup='sudo python3 -m pyftpdlib -p 21'
+alias smbup='sudo impacket-smbserver share ./ -smb2support -user test -password test'
+alias smbup-no-auth='sudo impacket-smbserver share ./ -smb2support'
+alias ss='searchsploit $1'
+alias ssx='searchsploit -x $1'
+alias ssm='searchsploit -m $1'
+alias gobusterz='gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt -u $1'
+alias mscanz='sudo masscan -p1-65535,U:1-65535 $1 --rate=1000 -e tun0 --wait 5 > mscan.txt'
+alias nse='ls /usr/share/nmap/scripts | grep'
+alias nse-help='nmap --script-help'
+alias pattern_create='/usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l $1'
+alias pattern_offset='/usr/share/metasploit-framework/tools/exploit/pattern_offset.rb -q $1' 
+alias nasm_shell='/usr/share/metasploit-framework/tools/exploit/nasm_shell.rb'
+alias msfelfscan='/usr/share/framework2/msfelfscan'
+#alias wpscan='wpscan -e ap,t,u --url $1'
+#alias wpscan-token='wpscan -e ap,t,u --url $1'
+alias aslr_off='echo 0 | sudo tee /proc/sys/kernel/randomize_va_space'
+
