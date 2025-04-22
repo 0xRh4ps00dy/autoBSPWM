@@ -40,7 +40,7 @@ sleep 1
 cp -r ~/AutoBSPWM/config/alacritty ~/.config
 sleep 1
 
-cp -r ~/AutoBSPWM/config/picom ~/.config~
+cp -r ~/AutoBSPWM/config/picom ~/.config
 sleep 1
 
 chmod +x ~/AutoBSPWM/scripts/*
@@ -125,4 +125,13 @@ sleep 1
 
 
 alacritty migrate
+sleep 1
+
+touch ~/.ctf_vars
+sleep 1
+
+sudo apt install -y ufw 
+sleep 1
+
+ufwon
 sleep 1
