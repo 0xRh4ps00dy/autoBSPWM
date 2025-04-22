@@ -46,14 +46,6 @@ sleep 1
 chmod +x ~/AutoBSPWM/scripts/*
 sleep 1
 
-cp ~/AutoBSPWM/scripts/ethernet_status.sh
-sleep 1
-
-cp ~/AutoBSPWM/scripts/vpn_status.sh
-sleep 1
-
-cp ~/AutoBSPWM/scripts/htb_target.sh 
-
 chmod +x ~/.config/polybar/launch.sh
 sleep 1
 
@@ -133,7 +125,7 @@ sleep 1
 sudo apt install -y ufw sshpass bat
 sleep 1
 
-cp ~/AutoBSPWM/scripts/proxy /usr/local/bin/proxy
+sudo cp ~/AutoBSPWM/scripts/proxy /usr/local/bin/proxy
 sleep 1
 
 sudo chmod +x /usr/local/bin/proxy

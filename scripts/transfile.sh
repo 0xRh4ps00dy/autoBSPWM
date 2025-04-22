@@ -86,5 +86,5 @@ else
     "$0" "$1" "l"
 fi
 
-cd ~/Linux-Config/Tools
-python3 -m http.server 8000
+cd ~/Tools
+python3 -m http.server $port
