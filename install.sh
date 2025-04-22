@@ -130,8 +130,5 @@ sleep 1
 touch ~/.ctf_vars
 sleep 1
 
-sudo apt install -y ufw 
-sleep 1
-
-ufwon
+sudo apt install -y ufw sshpass bat
 sleep 1
