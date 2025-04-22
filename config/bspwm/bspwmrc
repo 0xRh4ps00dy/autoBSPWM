@@ -30,7 +30,7 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-feh --bg-fill ~/Wallpapers/kali3.png &
+feh --bg-fill ~/Wallpapers/kali.png &
 picom --config ~/.config/picom/picom.conf &
 
 exec flameshot &

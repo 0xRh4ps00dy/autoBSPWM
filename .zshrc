@@ -103,8 +103,8 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="mousepad ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source $HOME/Linux-Config/functions
-source $HOME/Linux-Config/aliases
+source $HOME/.config/functions
+source $HOME/.config/aliases
 
 if [ -f $HOME/.ctf_vars ]; then
     . $HOME/.ctf_vars
