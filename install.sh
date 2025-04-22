@@ -132,3 +132,9 @@ sleep 1
 
 sudo apt install -y ufw sshpass bat
 sleep 1
+
+cp ~/AutoBSPWM/scripts/proxy /usr/local/bin/proxy
+sleep 1
+
+sudo chmod +x /usr/local/bin/proxy
+sleep 1

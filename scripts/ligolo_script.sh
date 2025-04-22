@@ -30,7 +30,4 @@ echo ""
 
 echo "sudo ip r add <subnet> dev ligolo"| xclip -sel clip
 
-
-cd ~/Tools
-
-./proxy -laddr $vpn:9001 -selfcert
+proxy -laddr $vpn:9001 -selfcert
