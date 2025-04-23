@@ -6,7 +6,7 @@ A fully automated script to install and configure a custom **bspwm** environment
 
 ## Table of content
 
-- [Environment Preview](#environment-preview)
+- [Environment Preview](#%EF%B8%8F-environment-preview)
 - [Features](#features)
 - [Installation](#installation)
 - [File Overview](#file-overview)
@@ -16,7 +16,7 @@ A fully automated script to install and configure a custom **bspwm** environment
 - [sxhkd Keybindings](#sxhkd-keybindings)
 - [Scripts](#scripts)
 - [Notes](#notes)
-- [Credits](#credits)
+- [Credits](#-credits)
 
 
 ---
