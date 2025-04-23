@@ -16,7 +16,7 @@ sleep 1
 chmod +x ~/.config/bspwm/bspwmrc
 sleep 1
 
-sudo apt install -y polybar rofi picom flameshot feh zoxide lsd
+sudo apt install -y polybar rofi picom flameshot feh lsd numlockx
 sleep 1
 
 

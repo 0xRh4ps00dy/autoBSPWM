@@ -109,16 +109,6 @@ source $HOME/.config/aliases
 if [ -f $HOME/.ctf_vars ]; then
     . $HOME/.ctf_vars
 fi
-eval "$(zoxide init zsh)"
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-export GOPATH=$HOME/go-workspace
-export GOROOT=/usr/local/go
-PATH=$PATH:$GOROOT/bin/:$GOPATH/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
