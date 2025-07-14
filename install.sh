@@ -130,3 +130,6 @@ sleep 1
 
 sudo chmod +x /usr/local/bin/proxy
 sleep 1
+
+sudo chmod +x /home/rh4ps00dy/.config/bspwm/scripts/bspwm_resize
+sleep 1
