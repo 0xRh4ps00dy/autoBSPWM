@@ -25,6 +25,7 @@ alias nmap-udp-ports='nmap -sU -sCV -oG scans/targetedUPDPorts $target -p '
 wordlists=/usr/share/wordlists/
 rockyou=/usr/share/wordlists/rockyou.txt
 seclists=/usr/share/wordlists/seclists
+payloads=/usr/share/payloadsallthethings
 
 # UFW 
 
