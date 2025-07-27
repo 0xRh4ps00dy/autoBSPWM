@@ -86,5 +86,5 @@ else
     "$0" "$1" "l"
 fi
 
-cd ~/Tools
+cd ~/hackingTools
 python3 -m http.server $port
