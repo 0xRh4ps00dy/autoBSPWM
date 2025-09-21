@@ -29,8 +29,8 @@ sleep 1
 mkdir -p ~/.config/alacritty
 sleep 1
 
-mkdir -p ~/.config/picom
-sleep 1
+# mkdir -p ~/.config/picom
+# sleep 1
 cp -r ~/AutoBSPWM/config/polybar ~/.config
 sleep 1
 
@@ -40,8 +40,8 @@ sleep 1
 cp -r ~/AutoBSPWM/config/alacritty ~/.config
 sleep 1
 
-cp -r ~/AutoBSPWM/config/picom ~/.config
-sleep 1
+# cp -r ~/AutoBSPWM/config/picom ~/.config
+# sleep 1
 
 chmod +x ~/AutoBSPWM/scripts/*
 sleep 1
