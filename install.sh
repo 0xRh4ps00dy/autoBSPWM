@@ -7,10 +7,10 @@ sleep 1
 mkdir -p ~/.config/sxhkd
 sleep 1
 
-cp -r ~/AutoBSPWM/config/bspwm ~/.config
+cp -r ~/autoBSPWM/config/bspwm ~/.config
 sleep 1
 
-cp -r ~/AutoBSPWM/config/sxhkd ~/.config
+cp -r ~/autoBSPWM/config/sxhkd ~/.config
 sleep 1
 
 chmod +x ~/.config/bspwm/bspwmrc
@@ -31,19 +31,19 @@ sleep 1
 
 # mkdir -p ~/.config/picom
 # sleep 1
-cp -r ~/AutoBSPWM/config/polybar ~/.config
+cp -r ~/autoBSPWM/config/polybar ~/.config
 sleep 1
 
-cp -r ~/AutoBSPWM/config/rofi ~/.config
+cp -r ~/autoBSPWM/config/rofi ~/.config
 sleep 1
 
-cp -r ~/AutoBSPWM/config/alacritty ~/.config
+cp -r ~/autoBSPWM/config/alacritty ~/.config
 sleep 1
 
-# cp -r ~/AutoBSPWM/config/picom ~/.config
+# cp -r ~/autoBSPWM/config/picom ~/.config
 # sleep 1
 
-chmod +x ~/AutoBSPWM/scripts/*
+chmod +x ~/autoBSPWM/scripts/*
 sleep 1
 
 chmod +x ~/.config/polybar/launch.sh
@@ -58,22 +58,22 @@ sleep 1
 mkdir -p ~/Wallpapers
 sleep 1
 
-cp ~/AutoBSPWM/wallpapers/kali.png ~/Wallpapers
+cp ~/autoBSPWM/wallpapers/kali.png ~/Wallpapers
 sleep 1
 
-cp ~/AutoBSPWM/scripts/ethernet_status.sh ~/.config/polybar/forest/scripts/
+cp ~/autoBSPWM/scripts/ethernet_status.sh ~/.config/polybar/forest/scripts/
 sleep 1
 
-cp ~/AutoBSPWM/scripts/vpn_status.sh ~/.config/polybar/forest/scripts/
+cp ~/autoBSPWM/scripts/vpn_status.sh ~/.config/polybar/forest/scripts/
 sleep 1
 
-cp ~/AutoBSPWM/scripts/htb_target.sh  ~/.config/polybar/forest/scripts/
+cp ~/autoBSPWM/scripts/htb_target.sh  ~/.config/polybar/forest/scripts/
 sleep 1
 
 touch ~/.target
 sleep 1
 
-cp -r ~/AutoBSPWM/fonts ~/.local/share/fonts
+cp -r ~/autoBSPWM/fonts ~/.local/share/fonts
 sleep 1
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -89,30 +89,30 @@ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZS
 sleep 1
 
 
-cp ~/AutoBSPWM/.zshrc ~/.zshrc
+cp ~/autoBSPWM/.zshrc ~/.zshrc
 sleep 1
 
-cp ~/AutoBSPWM/functions ~/.config/functions
+cp ~/autoBSPWM/functions ~/.config/functions
 sleep 1
 
-cp ~/AutoBSPWM/aliases ~/.config/aliases
+cp ~/autoBSPWM/aliases ~/.config/aliases
 sleep 1
 
 
 
-sudo ln -s ~/AutoBSPWM/scripts/ligolo_script.sh /usr/local/bin/ligolo_script
+sudo ln -s ~/autoBSPWM/scripts/ligolo_script.sh /usr/local/bin/ligolo_script
 sleep 1
 
-sudo ln -s ~/AutoBSPWM/scripts/multihandler.sh /usr/local/bin/multihandler
+sudo ln -s ~/autoBSPWM/scripts/multihandler.sh /usr/local/bin/multihandler
 sleep 1
 
-sudo ln -s ~/AutoBSPWM/scripts/penelope.py /usr/local/bin/pen
+sudo ln -s ~/autoBSPWM/scripts/penelope.py /usr/local/bin/pen
 sleep 1
 
-sudo ln -s ~/AutoBSPWM/scripts/target.sh /usr/local/bin/target
+sudo ln -s ~/autoBSPWM/scripts/target.sh /usr/local/bin/target
 sleep 1
 
-sudo ln -s ~/AutoBSPWM/scripts/transfile.sh /usr/local/bin/transfile
+sudo ln -s ~/autoBSPWM/scripts/transfile.sh /usr/local/bin/transfile
 sleep 1
 
 
@@ -125,7 +125,7 @@ sleep 1
 sudo apt install -y ufw sshpass bat
 sleep 1
 
-sudo cp ~/AutoBSPWM/scripts/proxy /usr/local/bin/proxy
+sudo cp ~/autoBSPWM/scripts/proxy /usr/local/bin/proxy
 sleep 1
 
 sudo chmod +x /usr/local/bin/proxy
